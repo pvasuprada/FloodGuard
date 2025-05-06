@@ -28,7 +28,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const GovernmentAndUrbanPlanners = () => {
+const InsuranceAndFinancial = () => {
   return (
     <Box>
       {/* Hero Section */}
@@ -47,8 +47,7 @@ const GovernmentAndUrbanPlanners = () => {
                 lineHeight="1.2"
                 mb={6}
               >
-                Government &<br />
-                Urban Planners
+                Insurance Companies and Banks
               </Heading>
               <Text
                 fontSize={{ base: "lg", lg: "xl" }}
@@ -56,11 +55,15 @@ const GovernmentAndUrbanPlanners = () => {
                 mb={8}
                 lineHeight="1.7"
               >
-                Offers a dynamic dashboard for visualising flood vulnerability
-                and future risks. Leveraging high-resolution data and climate
-                models, it enables proactive planning, resilient infrastructure,
-                and real-time emergency response for urban areas facing current
-                and future flood threats.
+                FloodGuard provides insurance companies and financial
+                institutions with flood vulnerability zones, future flood risk
+                projections, and location-specific climate risk intelligence.
+                These tools empower underwriters, portfolio managers, and risk
+                officers to evaluate physical climate risks—particularly
+                flooding—at granular scales. Our solutions support smarter
+                underwriting, better capital allocation, and regulatory
+                compliance in line with the IRDAI's Climate Risk and Sustainable
+                Finance Framework.
               </Text>
               <Button
                 bg="#0F2922"
@@ -76,8 +79,8 @@ const GovernmentAndUrbanPlanners = () => {
             </Box>
             <Box>
               <Image
-                src="/government-illustration.png"
-                alt="Government Building Illustration"
+                src="/insurance-illustration.png"
+                alt="Insurance and Banking Illustration"
                 w="full"
                 h="auto"
               />
@@ -109,13 +112,17 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image src="/risk-zones-icon.png" alt="Risk Zones" h="60px" />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                High-Vulnerability Zone Identification
+                Flood Vulnerability Zones
               </Heading>
               <Text color="#4A5568">
-                Identifies areas highly vulnerable to flooding for smarter land
-                use and zoning
+                High-resolution insights into flood-prone areas for risk-based
+                premium pricing and loan collateral evaluation across urban and
+                rural geographies.
               </Text>
             </VStack>
 
@@ -128,13 +135,20 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/projection-icon.png"
+                alt="Risk Projection"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Future-Proof Drainage Design
+                Future Risk Projections
               </Heading>
               <Text color="#4A5568">
-                Integrates future flood risks into drainage and stormwater
-                network design
+                Climate model simulations for future flood scenarios supporting
+                portfolio-level stress testing and long-term risk evaluation.
               </Text>
             </VStack>
 
@@ -147,73 +161,51 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/portfolio-icon.png"
+                alt="Portfolio Screening"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Prioritised Infrastructure Upgrades
+                Portfolio-Wide Screening
               </Heading>
               <Text color="#4A5568">
-                Enables prioritisation of critical zones for drainage upgrades
-                and flood control measures
-              </Text>
-            </VStack>
-
-            {/* Service 4 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Alignment with National Goals
-              </Heading>
-              <Text color="#4A5568">
-                Provides insights that align with national disaster risk
-                reduction & climate adaptation goals
-              </Text>
-            </VStack>
-
-            {/* Service 5 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Real-Time Response Coordination
-              </Heading>
-              <Text color="#4A5568">
-                Facilitates real-time response coordination during floods
-                through layered spatial dashboards
-              </Text>
-            </VStack>
-
-            {/* Service 6 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Reduced Long-Term Economic Losses
-              </Heading>
-              <Text color="#4A5568">
-                Reduces long-term economic losses by guiding risk-aware
-                infrastructure investments
+                Comprehensive portfolio screening tools to identify high-risk
+                zones and exposure clusters for proactive risk management.
               </Text>
             </VStack>
           </SimpleGrid>
+
+          {/* Conclusion Section */}
+          <Box
+            bg="white"
+            p={10}
+            borderRadius="xl"
+            boxShadow="md"
+            textAlign="center"
+            maxW="container.lg"
+            mx="auto"
+          >
+            <Heading
+              as="h2"
+              fontSize={{ base: "2xl", md: "3xl" }}
+              color="#1B3C4B"
+              mb={6}
+            >
+              Why Choose FloodGuard
+            </Heading>
+            <Text fontSize="lg" color="#4A5568" lineHeight="1.8">
+              FloodGuard equips insurers and financial institutions with
+              powerful climate intelligence tools that meet both operational and
+              regulatory needs. As IRDAI and global frameworks move toward
+              mandatory climate risk disclosures, our flood vulnerability zones
+              and predictive models help companies not just comply — but lead —
+              in building a climate-resilient financial system.
+            </Text>
+          </Box>
         </Container>
       </Box>
 
@@ -232,26 +224,28 @@ const GovernmentAndUrbanPlanners = () => {
                 What to Expect in the Demo:
               </Heading>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                See how FloodGuard can help you predict, plan, and protect —
-                before the next flood hits.
+                See how FloodGuard can help your institution evaluate and manage
+                flood risks effectively.
               </Text>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                Whether you're a government official, urban planner, or city
-                administrator, our flood risk assessment tools are built to meet
-                your specific needs. Book a free demo to explore how FloodGuard
-                works and how it can be tailored for your jurisdiction.
+                Whether you're an underwriter, risk officer, or portfolio
+                manager, our flood risk assessment tools are built to meet your
+                specific needs. Book a free demo to explore how FloodGuard works
+                and how it can be tailored for your institution.
               </Text>
               <UnorderedList spacing={4} color="gray.600">
                 <ListItem>
-                  A walk-through of our flood risk assessment process
+                  Detailed walkthrough of our flood risk assessment methodology
                 </ListItem>
                 <ListItem>
-                  Real examples of maps and reports we provide
+                  Sample reports and risk analysis demonstrations
                 </ListItem>
                 <ListItem>
-                  Q&A session to discuss your specific requirements
+                  Integration capabilities with existing systems
                 </ListItem>
-                <ListItem>Customisation options for your use case</ListItem>
+                <ListItem>
+                  Regulatory compliance features and reporting
+                </ListItem>
               </UnorderedList>
             </Box>
 
@@ -295,7 +289,7 @@ const GovernmentAndUrbanPlanners = () => {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel>Department / Role</FormLabel>
+                    <FormLabel>Institution Type</FormLabel>
                     <Select
                       placeholder="Select"
                       size="lg"
@@ -303,15 +297,11 @@ const GovernmentAndUrbanPlanners = () => {
                       borderColor="gray.300"
                       _hover={{ borderColor: "gray.400" }}
                     >
-                      <option value="urban-planning">Urban Planning</option>
-                      <option value="emergency-response">
-                        Emergency Response
-                      </option>
-                      <option value="infrastructure">
-                        Infrastructure Development
-                      </option>
-                      <option value="policy">Policy & Administration</option>
-                      <option value="other">Other</option>
+                      <option value="insurance">Insurance Company</option>
+                      <option value="bank">Bank</option>
+                      <option value="nbfc">NBFC</option>
+                      <option value="asset-management">Asset Management</option>
+                      <option value="other">Other Financial Institution</option>
                     </Select>
                   </FormControl>
 
@@ -345,9 +335,9 @@ const GovernmentAndUrbanPlanners = () => {
               <Text color="gray.600" maxW="md" mb={8}>
                 FloodGuard combines satellite data, climate models, historical
                 flood patterns, and geospatial analysis to forecast future flood
-                scenarios with precision. Whether it's zoning decisions or
-                emergency planning, we empower safer infrastructure development
-                and climate-resilient investments
+                scenarios with precision. Our tools help financial institutions
+                make informed decisions and meet regulatory requirements while
+                building climate resilience.
               </Text>
               <HStack spacing={4}>
                 <IconButton
@@ -482,4 +472,4 @@ const GovernmentAndUrbanPlanners = () => {
   );
 };
 
-export default GovernmentAndUrbanPlanners;
+export default InsuranceAndFinancial;

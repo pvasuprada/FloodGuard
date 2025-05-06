@@ -28,7 +28,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const GovernmentAndUrbanPlanners = () => {
+const CommunitiesAndIndividuals = () => {
   return (
     <Box>
       {/* Hero Section */}
@@ -47,8 +47,7 @@ const GovernmentAndUrbanPlanners = () => {
                 lineHeight="1.2"
                 mb={6}
               >
-                Government &<br />
-                Urban Planners
+                Communities and Individuals
               </Heading>
               <Text
                 fontSize={{ base: "lg", lg: "xl" }}
@@ -56,11 +55,13 @@ const GovernmentAndUrbanPlanners = () => {
                 mb={8}
                 lineHeight="1.7"
               >
-                Offers a dynamic dashboard for visualising flood vulnerability
-                and future risks. Leveraging high-resolution data and climate
-                models, it enables proactive planning, resilient infrastructure,
-                and real-time emergency response for urban areas facing current
-                and future flood threats.
+                FloodGuard empowers individuals, families, and community groups
+                with location-specific flood insights to make smarter decisions
+                about where they live, how they build, and how they protect
+                their property. Our key product for this sector is the Flood
+                Risk Scorecard — a simple yet powerful tool that assesses
+                current and future flood risk for specific properties,
+                neighborhoods, or community zones.
               </Text>
               <Button
                 bg="#0F2922"
@@ -76,8 +77,8 @@ const GovernmentAndUrbanPlanners = () => {
             </Box>
             <Box>
               <Image
-                src="/government-illustration.png"
-                alt="Government Building Illustration"
+                src="/community-illustration.png"
+                alt="Community and Individuals Illustration"
                 w="full"
                 h="auto"
               />
@@ -109,13 +110,17 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image src="/scorecard-icon.png" alt="Risk Scorecard" h="60px" />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                High-Vulnerability Zone Identification
+                Property-Level Risk Scorecards
               </Heading>
               <Text color="#4A5568">
-                Identifies areas highly vulnerable to flooding for smarter land
-                use and zoning
+                Comprehensive risk profiles for homes and properties, showing
+                vulnerability to present and future flood events with detailed
+                analysis.
               </Text>
             </VStack>
 
@@ -128,13 +133,21 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/community-icon.png"
+                alt="Community Planning"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Future-Proof Drainage Design
+                Community Resilience Planning
               </Heading>
               <Text color="#4A5568">
-                Integrates future flood risks into drainage and stormwater
-                network design
+                Tools for resident associations to identify risks and prioritize
+                collective measures for flood protection and infrastructure
+                improvement.
               </Text>
             </VStack>
 
@@ -147,73 +160,51 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/guidance-icon.png"
+                alt="Construction Guidance"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Prioritised Infrastructure Upgrades
+                Construction & Protection Guidance
               </Heading>
               <Text color="#4A5568">
-                Enables prioritisation of critical zones for drainage upgrades
-                and flood control measures
-              </Text>
-            </VStack>
-
-            {/* Service 4 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Alignment with National Goals
-              </Heading>
-              <Text color="#4A5568">
-                Provides insights that align with national disaster risk
-                reduction & climate adaptation goals
-              </Text>
-            </VStack>
-
-            {/* Service 5 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Real-Time Response Coordination
-              </Heading>
-              <Text color="#4A5568">
-                Facilitates real-time response coordination during floods
-                through layered spatial dashboards
-              </Text>
-            </VStack>
-
-            {/* Service 6 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Reduced Long-Term Economic Losses
-              </Heading>
-              <Text color="#4A5568">
-                Reduces long-term economic losses by guiding risk-aware
-                infrastructure investments
+                Expert guidance for flood-resilient construction and property
+                modifications, from plinth levels to drainage solutions.
               </Text>
             </VStack>
           </SimpleGrid>
+
+          {/* Conclusion Section */}
+          <Box
+            bg="white"
+            p={10}
+            borderRadius="xl"
+            boxShadow="md"
+            textAlign="center"
+            maxW="container.lg"
+            mx="auto"
+          >
+            <Heading
+              as="h2"
+              fontSize={{ base: "2xl", md: "3xl" }}
+              color="#1B3C4B"
+              mb={6}
+            >
+              Why Choose FloodGuard
+            </Heading>
+            <Text fontSize="lg" color="#4A5568" lineHeight="1.8">
+              By offering accessible, hyper-local flood insights, FloodGuard
+              enables individuals and communities to take control of their
+              climate risk. Whether it's deciding where to live, how to build,
+              or how to prepare, our Flood Risk Scorecards help everyday people
+              protect what matters most — their homes, their savings, and their
+              lives.
+            </Text>
+          </Box>
         </Container>
       </Box>
 
@@ -232,26 +223,24 @@ const GovernmentAndUrbanPlanners = () => {
                 What to Expect in the Demo:
               </Heading>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                See how FloodGuard can help you predict, plan, and protect —
-                before the next flood hits.
+                See how FloodGuard can help you understand and protect against
+                flood risks in your area.
               </Text>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                Whether you're a government official, urban planner, or city
-                administrator, our flood risk assessment tools are built to meet
-                your specific needs. Book a free demo to explore how FloodGuard
-                works and how it can be tailored for your jurisdiction.
+                Whether you're a homeowner, resident association member, or
+                community leader, our flood risk assessment tools are designed
+                to be simple yet powerful. Book a free demo to explore how
+                FloodGuard can help protect your community.
               </Text>
               <UnorderedList spacing={4} color="gray.600">
                 <ListItem>
-                  A walk-through of our flood risk assessment process
+                  See sample Flood Risk Scorecards for different property types
                 </ListItem>
                 <ListItem>
-                  Real examples of maps and reports we provide
+                  Learn how to interpret risk levels and recommendations
                 </ListItem>
-                <ListItem>
-                  Q&A session to discuss your specific requirements
-                </ListItem>
-                <ListItem>Customisation options for your use case</ListItem>
+                <ListItem>Explore community-wide planning features</ListItem>
+                <ListItem>Understand practical protection measures</ListItem>
               </UnorderedList>
             </Box>
 
@@ -295,7 +284,7 @@ const GovernmentAndUrbanPlanners = () => {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel>Department / Role</FormLabel>
+                    <FormLabel>I am a</FormLabel>
                     <Select
                       placeholder="Select"
                       size="lg"
@@ -303,14 +292,12 @@ const GovernmentAndUrbanPlanners = () => {
                       borderColor="gray.300"
                       _hover={{ borderColor: "gray.400" }}
                     >
-                      <option value="urban-planning">Urban Planning</option>
-                      <option value="emergency-response">
-                        Emergency Response
+                      <option value="homeowner">Homeowner</option>
+                      <option value="resident-association">
+                        Resident Association Member
                       </option>
-                      <option value="infrastructure">
-                        Infrastructure Development
-                      </option>
-                      <option value="policy">Policy & Administration</option>
+                      <option value="community-leader">Community Leader</option>
+                      <option value="ngo">NGO Representative</option>
                       <option value="other">Other</option>
                     </Select>
                   </FormControl>
@@ -344,10 +331,10 @@ const GovernmentAndUrbanPlanners = () => {
               </Link>
               <Text color="gray.600" maxW="md" mb={8}>
                 FloodGuard combines satellite data, climate models, historical
-                flood patterns, and geospatial analysis to forecast future flood
-                scenarios with precision. Whether it's zoning decisions or
-                emergency planning, we empower safer infrastructure development
-                and climate-resilient investments
+                flood patterns, and geospatial analysis to make flood risk
+                information accessible to everyone. Our tools help communities
+                and individuals make informed decisions to protect their homes
+                and loved ones.
               </Text>
               <HStack spacing={4}>
                 <IconButton
@@ -482,4 +469,4 @@ const GovernmentAndUrbanPlanners = () => {
   );
 };
 
-export default GovernmentAndUrbanPlanners;
+export default CommunitiesAndIndividuals;

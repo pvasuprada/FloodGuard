@@ -7,6 +7,10 @@ import About from "./pages/About";
 import FAQs from "./pages/FAQs";
 import Navigation from "./components/Navigation";
 import GovernmentAndUrbanPlanners from "./pages/services/GovernmentAndUrbanPlanners";
+import Businesses from "./pages/services/Businesses";
+import InsuranceAndFinancial from "./pages/services/InsuranceAndFinancial";
+import CommunitiesAndIndividuals from "./pages/services/CommunitiesAndIndividuals";
+import EducationAndResearch from "./pages/services/EducationAndResearch";
 
 function App() {
   return (
@@ -20,10 +24,19 @@ function App() {
             path="/services/governments"
             element={<GovernmentAndUrbanPlanners />}
           />
-          <Route path="/services/businesses" element={<Services />} />
-          <Route path="/services/insurance" element={<Services />} />
-          <Route path="/services/communities" element={<Services />} />
-          <Route path="/services/education" element={<Services />} />
+          <Route path="/services/businesses" element={<Businesses />} />
+          <Route
+            path="/services/insurance"
+            element={<InsuranceAndFinancial />}
+          />
+          <Route
+            path="/services/communities"
+            element={<CommunitiesAndIndividuals />}
+          />
+          <Route
+            path="/services/education"
+            element={<EducationAndResearch />}
+          />
           <Route path="/resources" element={<Resources />} />
           <Route path="/about" element={<About />} />
           <Route path="/faqs" element={<FAQs />} />

@@ -28,7 +28,7 @@ import { Link as RouterLink } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
-const GovernmentAndUrbanPlanners = () => {
+const EducationAndResearch = () => {
   return (
     <Box>
       {/* Hero Section */}
@@ -47,8 +47,7 @@ const GovernmentAndUrbanPlanners = () => {
                 lineHeight="1.2"
                 mb={6}
               >
-                Government &<br />
-                Urban Planners
+                Education and Research Institutions
               </Heading>
               <Text
                 fontSize={{ base: "lg", lg: "xl" }}
@@ -56,11 +55,13 @@ const GovernmentAndUrbanPlanners = () => {
                 mb={8}
                 lineHeight="1.7"
               >
-                Offers a dynamic dashboard for visualising flood vulnerability
-                and future risks. Leveraging high-resolution data and climate
-                models, it enables proactive planning, resilient infrastructure,
-                and real-time emergency response for urban areas facing current
-                and future flood threats.
+                FloodGuard partners with schools, colleges, universities, and
+                research organizations to promote climate literacy, strengthen
+                scientific inquiry, and support data-driven education. We
+                provide access to real-time and historical flood data,
+                interactive dashboards, and spatial tools that bring climate
+                science into the classroom and research labs — making learning
+                both practical and impactful.
               </Text>
               <Button
                 bg="#0F2922"
@@ -76,8 +77,8 @@ const GovernmentAndUrbanPlanners = () => {
             </Box>
             <Box>
               <Image
-                src="/government-illustration.png"
-                alt="Government Building Illustration"
+                src="/education-illustration.png"
+                alt="Education and Research Illustration"
                 w="full"
                 h="auto"
               />
@@ -109,13 +110,21 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/curriculum-icon.png"
+                alt="Curriculum Support"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                High-Vulnerability Zone Identification
+                Climate Curriculum Support
               </Heading>
               <Text color="#4A5568">
-                Identifies areas highly vulnerable to flooding for smarter land
-                use and zoning
+                Integrate real-world flood data and visual tools into climate
+                science, environmental studies, geography, and urban planning
+                courses.
               </Text>
             </VStack>
 
@@ -128,13 +137,17 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image src="/research-icon.png" alt="Research Data" h="60px" />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Future-Proof Drainage Design
+                Research-Ready Datasets
               </Heading>
               <Text color="#4A5568">
-                Integrates future flood risks into drainage and stormwater
-                network design
+                Access validated data products for academic research, including
+                flood vulnerability zones, risk projections, and rainfall-return
+                period maps.
               </Text>
             </VStack>
 
@@ -147,73 +160,50 @@ const GovernmentAndUrbanPlanners = () => {
               spacing={4}
               align="center"
               textAlign="center"
+              transition="all 0.3s"
+              _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
+              <Image
+                src="/interactive-icon.png"
+                alt="Interactive Learning"
+                h="60px"
+              />
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Prioritised Infrastructure Upgrades
+                Interactive Learning Tools
               </Heading>
               <Text color="#4A5568">
-                Enables prioritisation of critical zones for drainage upgrades
-                and flood control measures
-              </Text>
-            </VStack>
-
-            {/* Service 4 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Alignment with National Goals
-              </Heading>
-              <Text color="#4A5568">
-                Provides insights that align with national disaster risk
-                reduction & climate adaptation goals
-              </Text>
-            </VStack>
-
-            {/* Service 5 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Real-Time Response Coordination
-              </Heading>
-              <Text color="#4A5568">
-                Facilitates real-time response coordination during floods
-                through layered spatial dashboards
-              </Text>
-            </VStack>
-
-            {/* Service 6 */}
-            <VStack
-              bg="white"
-              p={8}
-              borderRadius="xl"
-              boxShadow="sm"
-              spacing={4}
-              align="center"
-              textAlign="center"
-            >
-              <Heading as="h3" fontSize="xl" color="#1B3C4B">
-                Reduced Long-Term Economic Losses
-              </Heading>
-              <Text color="#4A5568">
-                Reduces long-term economic losses by guiding risk-aware
-                infrastructure investments
+                Explore risks through interactive dashboards and maps, enabling
+                hands-on learning and scenario simulation for students.
               </Text>
             </VStack>
           </SimpleGrid>
+
+          {/* Conclusion Section */}
+          <Box
+            bg="white"
+            p={10}
+            borderRadius="xl"
+            boxShadow="md"
+            textAlign="center"
+            maxW="container.lg"
+            mx="auto"
+          >
+            <Heading
+              as="h2"
+              fontSize={{ base: "2xl", md: "3xl" }}
+              color="#1B3C4B"
+              mb={6}
+            >
+              Why Choose FloodGuard
+            </Heading>
+            <Text fontSize="lg" color="#4A5568" lineHeight="1.8">
+              FloodGuard supports education and research institutions in shaping
+              a future-ready generation of thinkers, researchers, and climate
+              leaders. By making complex flood data accessible and relevant, we
+              help embed scientific learning into everyday education and foster
+              a culture of evidence-based resilience planning.
+            </Text>
+          </Box>
         </Container>
       </Box>
 
@@ -232,26 +222,24 @@ const GovernmentAndUrbanPlanners = () => {
                 What to Expect in the Demo:
               </Heading>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                See how FloodGuard can help you predict, plan, and protect —
-                before the next flood hits.
+                See how FloodGuard can enhance your institution's climate
+                education and research capabilities.
               </Text>
               <Text fontSize="lg" color="gray.600" mb={8}>
-                Whether you're a government official, urban planner, or city
-                administrator, our flood risk assessment tools are built to meet
-                your specific needs. Book a free demo to explore how FloodGuard
-                works and how it can be tailored for your jurisdiction.
+                Whether you're an educator, researcher, or administrator, our
+                tools are designed to support both teaching and research needs.
+                Book a free demo to explore how FloodGuard can benefit your
+                institution.
               </Text>
               <UnorderedList spacing={4} color="gray.600">
                 <ListItem>
-                  A walk-through of our flood risk assessment process
+                  Overview of our educational resources and data products
                 </ListItem>
+                <ListItem>Demonstration of interactive learning tools</ListItem>
                 <ListItem>
-                  Real examples of maps and reports we provide
+                  Research applications and data integration capabilities
                 </ListItem>
-                <ListItem>
-                  Q&A session to discuss your specific requirements
-                </ListItem>
-                <ListItem>Customisation options for your use case</ListItem>
+                <ListItem>Sample curriculum integration examples</ListItem>
               </UnorderedList>
             </Box>
 
@@ -295,7 +283,7 @@ const GovernmentAndUrbanPlanners = () => {
                   </FormControl>
 
                   <FormControl isRequired>
-                    <FormLabel>Department / Role</FormLabel>
+                    <FormLabel>Role</FormLabel>
                     <Select
                       placeholder="Select"
                       size="lg"
@@ -303,14 +291,10 @@ const GovernmentAndUrbanPlanners = () => {
                       borderColor="gray.300"
                       _hover={{ borderColor: "gray.400" }}
                     >
-                      <option value="urban-planning">Urban Planning</option>
-                      <option value="emergency-response">
-                        Emergency Response
-                      </option>
-                      <option value="infrastructure">
-                        Infrastructure Development
-                      </option>
-                      <option value="policy">Policy & Administration</option>
+                      <option value="educator">Educator</option>
+                      <option value="researcher">Researcher</option>
+                      <option value="administrator">Administrator</option>
+                      <option value="student">Student</option>
                       <option value="other">Other</option>
                     </Select>
                   </FormControl>
@@ -344,10 +328,9 @@ const GovernmentAndUrbanPlanners = () => {
               </Link>
               <Text color="gray.600" maxW="md" mb={8}>
                 FloodGuard combines satellite data, climate models, historical
-                flood patterns, and geospatial analysis to forecast future flood
-                scenarios with precision. Whether it's zoning decisions or
-                emergency planning, we empower safer infrastructure development
-                and climate-resilient investments
+                flood patterns, and geospatial analysis to support education and
+                research. Our tools help institutions deliver impactful climate
+                education and conduct meaningful research.
               </Text>
               <HStack spacing={4}>
                 <IconButton
@@ -482,4 +465,4 @@ const GovernmentAndUrbanPlanners = () => {
   );
 };
 
-export default GovernmentAndUrbanPlanners;
+export default EducationAndResearch;
