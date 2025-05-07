@@ -41,17 +41,25 @@ const Navigation = () => {
         maxW="container.xl"
         mx="auto"
         px={4}
-        h="80px"
+        h="60px"
         alignItems="center"
         justifyContent="space-between"
       >
         <RouterLink to="/">
-          <Image
-            h="50px"
-            src="/logo.png"
-            alt="FloodGuard Logo"
-            fallbackSrc="https://via.placeholder.com/150x50?text=FloodGuard"
-          />
+          <Box display="flex" alignItems="center" gap={2}>
+            <Image
+              h="40px"
+              src="/logo.png"
+              alt="FloodGuard Logo"
+              fallbackSrc="https://via.placeholder.com/150x50?text=FloodGuard"
+            />
+            <Image
+              h="10px"
+              src="/logotext.png"
+              alt="FloodGuard Logo"
+              fallbackSrc="https://via.placeholder.com/150x50?text=FloodGuard"
+            />
+          </Box>
         </RouterLink>
 
         <Flex gap={8} alignItems="center">
@@ -129,7 +137,7 @@ const Navigation = () => {
               </MenuItem>
             </MenuList>
           </Menu>
-          <Link
+          {/* <Link
             as={RouterLink}
             to="/resources"
             fontSize="md"
@@ -138,7 +146,7 @@ const Navigation = () => {
             _hover={{ color: "darkgreen.700" }}
           >
             Resources
-          </Link>
+          </Link> */}
           <Link
             as={RouterLink}
             to="/about"
@@ -149,7 +157,7 @@ const Navigation = () => {
           >
             About Us
           </Link>
-          <Link
+          {/* <Link
             as={RouterLink}
             to="/faqs"
             fontSize="md"
@@ -158,7 +166,7 @@ const Navigation = () => {
             _hover={{ color: "darkgreen.700" }}
           >
             FAQs
-          </Link>
+          </Link> */}
           <Button
             bg="darkgreen.800"
             color="white"
