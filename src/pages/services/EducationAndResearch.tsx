@@ -114,11 +114,11 @@ const EducationAndResearch = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/curriculum-icon.png"
                 alt="Curriculum Support"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Climate Curriculum Support
               </Heading>
@@ -141,7 +141,7 @@ const EducationAndResearch = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image src="/research-icon.png" alt="Research Data" h="60px" />
+              {/* <Image src="/research-icon.png" alt="Research Data" h="60px" /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Research-Ready Datasets
               </Heading>
@@ -164,11 +164,11 @@ const EducationAndResearch = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/interactive-icon.png"
                 alt="Interactive Learning"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Interactive Learning Tools
               </Heading>

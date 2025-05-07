@@ -114,7 +114,7 @@ const CommunitiesAndIndividuals = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image src="/scorecard-icon.png" alt="Risk Scorecard" h="60px" />
+              {/* <Image src="/scorecard-icon.png" alt="Risk Scorecard" h="60px" /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Property-Level Risk Scorecards
               </Heading>
@@ -137,11 +137,11 @@ const CommunitiesAndIndividuals = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/commandpropowners.png"
                 alt="Community Planning"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Community Resilience Planning
               </Heading>
@@ -164,11 +164,11 @@ const CommunitiesAndIndividuals = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/guidance-icon.png"
                 alt="Construction Guidance"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Construction & Protection Guidance
               </Heading>

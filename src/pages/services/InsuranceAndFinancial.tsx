@@ -117,7 +117,7 @@ const InsuranceAndFinancial = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image src="/risk-zones-icon.png" alt="Risk Zones" h="60px" />
+              {/* <Image src="/risk-zones-icon.png" alt="Risk Zones" h="60px" /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Flood Vulnerability Zones
               </Heading>
@@ -140,11 +140,11 @@ const InsuranceAndFinancial = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/projection-icon.png"
                 alt="Risk Projection"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Future Risk Projections
               </Heading>
@@ -166,11 +166,11 @@ const InsuranceAndFinancial = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/portfolio-icon.png"
                 alt="Portfolio Screening"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Portfolio-Wide Screening
               </Heading>

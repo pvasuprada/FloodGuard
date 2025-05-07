@@ -15,30 +15,13 @@ import {
   Flex,
   useBreakpointValue,
   IconButton,
-  Grid,
-  UnorderedList,
-  ListItem,
-  FormControl,
-  FormLabel,
-  Input,
-  Select,
-  Link,
-  HStack,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
 } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { useState, useRef, useEffect } from "react";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import { Icon } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
-import { ChevronDownIcon } from "@chakra-ui/icons";
-import { FaGlobe } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
 import WatchADemo from "../components/WatchADemo";
 import FloodGuardFooter from "../components/FloodGuardFooter";
+import { Link as RouterLink } from "react-router-dom";
 
 const Home = () => {
   const [tabIndex, setTabIndex] = useState(0);
@@ -56,15 +39,19 @@ const Home = () => {
   }, [location]);
 
   const handlePrevTab = () => {
-    setTabIndex((prev) => (prev - 1 + 3) % 3);
+    setTabIndex((prev) => (prev - 1 + 4) % 4);
   };
 
   const handleNextTab = () => {
-    setTabIndex((prev) => (prev + 1) % 3);
+    setTabIndex((prev) => (prev + 1) % 4);
   };
 
   const scrollToDemo = () => {
     demoSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -101,7 +88,7 @@ const Home = () => {
         <Container
           maxW="container.xl"
           pt={{ base: "100px", md: "120px" }}
-          pb="60px"
+          pb={{ base: "240px", md: "280px" }}
           position="relative"
           zIndex={1}
         >
@@ -162,7 +149,12 @@ const Home = () => {
               </Button>
 
               {/* Incubation Section */}
-              <Box mt={{ base: 12, lg: 16 }}>
+              <Box
+                //mt={{ base: 12, lg: 16 }}
+                mb={{ base: 10, md: 14 }}
+                position="relative"
+                zIndex={2}
+              >
                 <Text color="#0F2922" mb={4} fontSize="sm" fontWeight="medium">
                   Incubated in
                 </Text>
@@ -186,375 +178,581 @@ const Home = () => {
             </VStack>
           </Box>
         </Container>
-      </Box>
 
-      {/* Rest of the content with white background */}
-      <Box bg="white">
-        {/* Why Flood Guard Section */}
+        {/* Why Flood Guard Section - Overlapping Card */}
         <Box
-          bg="white"
-          mt={{ base: 16, lg: 20 }}
-          py={{ base: 16, lg: 20 }}
-          position="relative"
+          position="absolute"
+          bottom={{ base: "-180px", md: "-140px" }}
+          left={0}
+          right={0}
+          zIndex={2}
         >
           <Container maxW="container.xl">
-            <VStack spacing={{ base: 8, lg: 12 }} align="center">
-              <Heading
-                as="h2"
-                fontSize={{ base: "3xl", lg: "5xl" }}
-                color="#0F2922"
-                fontWeight="bold"
-                textAlign="center"
-                letterSpacing="-0.02em"
-              >
-                Why Flood Guard?
-              </Heading>
-              <Text
-                fontSize={{ base: "md", lg: "lg" }}
-                color="#4A5568"
-                textAlign="center"
-                maxW="container.md"
-                mb={8}
-              >
-                Floods are becoming more unpredictable with climate change. At
-                FloodGuard, we help you stay prepared through our 3-step
-                approach
-              </Text>
-
-              {/* Three Column Features */}
-              <SimpleGrid
-                columns={{ base: 1, md: 3 }}
-                spacing={{ base: 6, lg: 10 }}
-                mt={{ base: 8, lg: 12 }}
-                w="full"
-                px={{ base: 4, lg: 8 }}
-              >
-                {/* Predict */}
-                <VStack
-                  p={{ base: 6, lg: 8 }}
-                  bg="white"
-                  boxShadow="lg"
-                  borderRadius="xl"
-                  align="center"
-                  spacing={4}
-                  transition="all 0.3s"
-                  _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
-                >
-                  <Image src="/predict-icon.png" alt="Predict" h="60px" />
-                  <Heading as="h3" size="lg" color="#0F2922">
-                    Predict
-                  </Heading>
-                  <Text color="#4A5568" textAlign="center">
-                    See how flood risk might change in the coming years
-                  </Text>
-                </VStack>
-
-                {/* Plan */}
-                <VStack
-                  p={{ base: 6, lg: 8 }}
-                  bg="white"
-                  boxShadow="lg"
-                  borderRadius="xl"
-                  align="center"
-                  spacing={4}
-                  transition="all 0.3s"
-                  _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
-                >
-                  <Image src="/plan-icon.png" alt="Plan" h="60px" />
-                  <Heading as="h3" size="lg" color="#0F2922">
-                    Plan
-                  </Heading>
-                  <Text color="#4A5568" textAlign="center">
-                    Know where to build safely and where to avoid
-                  </Text>
-                </VStack>
-
-                {/* Protect */}
-                <VStack
-                  p={{ base: 6, lg: 8 }}
-                  bg="white"
-                  boxShadow="lg"
-                  borderRadius="xl"
-                  align="center"
-                  spacing={4}
-                  transition="all 0.3s"
-                  _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
-                >
-                  <Image src="/protect-icon.png" alt="Protect" h="60px" />
-                  <Heading as="h3" size="lg" color="#0F2922">
-                    Protect
-                  </Heading>
-                  <Text color="#4A5568" textAlign="center">
-                    Prepare buildings and communities to reduce damage
-                  </Text>
-                </VStack>
-              </SimpleGrid>
-
-              {/* Carousel Section */}
-              <Box w="full" mt={{ base: 16, lg: 20 }}>
+            <Box
+              bg="white"
+              borderRadius="2xl"
+              boxShadow="xl"
+              p={{ base: 6, md: 10 }}
+              mx={{ base: 4, md: 8 }}
+            >
+              <VStack spacing={{ base: 8, lg: 12 }} align="center">
                 <Heading
                   as="h2"
-                  fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                  fontSize={{ base: "3xl", lg: "4xl" }}
                   color="#0F2922"
                   fontWeight="bold"
                   textAlign="center"
-                  mb={{ base: 8, lg: 12 }}
                   letterSpacing="-0.02em"
                 >
-                  Join us in Building Flood-Resilient Communities
+                  Why Flood Guard?
                 </Heading>
-
-                <Tabs
-                  index={tabIndex}
-                  onChange={setTabIndex}
-                  variant="unstyled"
-                  align="center"
-                  position="relative"
+                <Text
+                  fontSize={{ base: "md", lg: "lg" }}
+                  color="#4A5568"
+                  textAlign="center"
+                  maxW="container.md"
                 >
-                  <TabList
-                    mb={8}
-                    border="none"
-                    display="flex"
-                    justifyContent="center"
-                    gap={4}
-                  >
-                    <Tab
-                      fontSize={{ base: "sm", md: "md" }}
-                      fontWeight="medium"
-                      color={tabIndex === 0 ? "white" : "gray.600"}
-                      bg={tabIndex === 0 ? "#0F2922" : "transparent"}
-                      borderRadius="full"
-                      px={6}
-                      py={3}
-                      _hover={{ bg: tabIndex === 0 ? "#0F2922" : "gray.100" }}
-                      transition="all 0.3s"
-                    >
-                      Governments & Urban Planners
-                    </Tab>
-                    <Tab
-                      fontSize={{ base: "sm", md: "md" }}
-                      fontWeight="medium"
-                      color={tabIndex === 1 ? "white" : "gray.600"}
-                      bg={tabIndex === 1 ? "#0F2922" : "transparent"}
-                      borderRadius="full"
-                      px={6}
-                      py={3}
-                      _hover={{ bg: tabIndex === 1 ? "#0F2922" : "gray.100" }}
-                      transition="all 0.3s"
-                    >
-                      Communities & Property Owners
-                    </Tab>
-                    <Tab
-                      fontSize={{ base: "sm", md: "md" }}
-                      fontWeight="medium"
-                      color={tabIndex === 2 ? "white" : "gray.600"}
-                      bg={tabIndex === 2 ? "#0F2922" : "transparent"}
-                      borderRadius="full"
-                      px={6}
-                      py={3}
-                      _hover={{ bg: tabIndex === 2 ? "#0F2922" : "gray.100" }}
-                      transition="all 0.3s"
-                    >
-                      Businesses & Investors
-                    </Tab>
-                  </TabList>
+                  Floods are becoming more unpredictable with climate change. At
+                  FloodGuard, we help you stay prepared through our 3-step
+                  approach
+                </Text>
 
-                  {/* Navigation Arrows */}
-                  {!isMobile && (
-                    <>
-                      <IconButton
-                        aria-label="Previous"
-                        icon={<ChevronLeftIcon boxSize={8} />}
-                        position="absolute"
-                        left={0}
-                        top="50%"
-                        transform="translateY(-50%)"
-                        onClick={handlePrevTab}
-                        variant="ghost"
-                        size="lg"
-                        zIndex={2}
-                      />
-                      <IconButton
-                        aria-label="Next"
-                        icon={<ChevronRightIcon boxSize={8} />}
-                        position="absolute"
-                        right={0}
-                        top="50%"
-                        transform="translateY(-50%)"
-                        onClick={handleNextTab}
-                        variant="ghost"
-                        size="lg"
-                        zIndex={2}
-                      />
-                    </>
-                  )}
+                {/* Three Column Features */}
+                <SimpleGrid
+                  columns={{ base: 1, md: 3 }}
+                  spacing={{ base: 6, lg: 10 }}
+                  w="full"
+                >
+                  {/* Predict */}
+                  <VStack spacing={4} align="center">
+                    <Image src="/predict-icon.png" alt="Predict" h="60px" />
+                    <Heading as="h3" size="lg" color="#0F2922">
+                      Predict
+                    </Heading>
+                    <Text color="#4A5568" textAlign="center">
+                      See how flood risk might change in the coming years
+                    </Text>
+                  </VStack>
 
-                  <TabPanels>
-                    {/* Government & Urban Planners */}
-                    <TabPanel>
-                      <Box
-                        maxW="container.lg"
-                        mx="auto"
-                        p={8}
-                        bg="white"
-                        boxShadow="xl"
-                        borderRadius="2xl"
-                        transition="all 0.3s"
-                      >
-                        <Flex direction={{ base: "column", md: "row" }} gap={8}>
-                          <Box flex={1}>
-                            <Image
-                              src="/govtandurbanplanner.png"
-                              alt="Governments and Urban Planners"
-                              w="full"
-                              h="300px"
-                              objectFit="cover"
-                              borderRadius="xl"
-                            />
-                          </Box>
-                          <Box flex={1}>
-                            <VStack align="start" spacing={4}>
-                              <Heading size="lg" color="#0F2922">
-                                Flood Hazard Mapping & Zoning Support
-                              </Heading>
-                              <Text color="gray.600">
-                                Identify high-risk areas for sustainable urban
-                                planning, land-use regulation, and
-                                infrastructure development.
-                              </Text>
-                              <Heading size="md" color="#0F2922" mt={4}>
-                                Future Flood Risk Projections
-                              </Heading>
-                              <Text color="gray.600">
-                                Use climate models to assess how flood risk may
-                                evolve, helping shape long-term infrastructure
-                                and policy decisions.
-                              </Text>
-                              <Button
-                                colorScheme="blue"
-                                size="lg"
-                                mt={4}
-                                borderRadius="full"
-                              >
-                                Learn More
-                              </Button>
-                            </VStack>
-                          </Box>
-                        </Flex>
-                      </Box>
-                    </TabPanel>
+                  {/* Plan */}
+                  <VStack spacing={4} align="center">
+                    <Image src="/plan-icon.png" alt="Plan" h="60px" />
+                    <Heading as="h3" size="lg" color="#0F2922">
+                      Plan
+                    </Heading>
+                    <Text color="#4A5568" textAlign="center">
+                      Know where to build safely and where to avoid
+                    </Text>
+                  </VStack>
 
-                    {/* Communities & Property Owners */}
-                    <TabPanel>
-                      <Box
-                        maxW="container.lg"
-                        mx="auto"
-                        p={8}
-                        bg="white"
-                        boxShadow="xl"
-                        borderRadius="2xl"
-                        transition="all 0.3s"
-                      >
-                        <Flex direction={{ base: "column", md: "row" }} gap={8}>
-                          <Box flex={1}>
-                            <Image
-                              src="/commandpropowners.png"
-                              alt="Communities and Property Owners"
-                              w="full"
-                              h="300px"
-                              objectFit="cover"
-                              borderRadius="xl"
-                            />
-                          </Box>
-                          <Box flex={1}>
-                            <VStack align="start" spacing={4}>
-                              <Heading size="lg" color="#0F2922">
-                                Property-Level Risk Assessment
-                              </Heading>
-                              <Text color="gray.600">
-                                Help homeowners and buyers understand flood
-                                exposure before making property decisions.
-                              </Text>
-                              <Heading size="md" color="#0F2922" mt={4}>
-                                Community Risk Profiles
-                              </Heading>
-                              <Text color="gray.600">
-                                Generate flood risk maps and reports for
-                                neighbourhoods, apartments, or housing colonies
-                                to support preparedness.
-                              </Text>
-                              <Button
-                                colorScheme="blue"
-                                size="lg"
-                                mt={4}
-                                borderRadius="full"
-                              >
-                                Learn More
-                              </Button>
-                            </VStack>
-                          </Box>
-                        </Flex>
-                      </Box>
-                    </TabPanel>
-
-                    {/* Businesses & Investors */}
-                    <TabPanel>
-                      <Box
-                        maxW="container.lg"
-                        mx="auto"
-                        p={8}
-                        bg="white"
-                        boxShadow="xl"
-                        borderRadius="2xl"
-                        transition="all 0.3s"
-                      >
-                        <Flex direction={{ base: "column", md: "row" }} gap={8}>
-                          <Box flex={1}>
-                            <Image
-                              src="/businessandinvestors.png"
-                              alt="Businesses and Investors"
-                              w="full"
-                              h="300px"
-                              objectFit="cover"
-                              borderRadius="xl"
-                            />
-                          </Box>
-                          <Box flex={1}>
-                            <VStack align="start" spacing={4}>
-                              <Heading size="lg" color="#0F2922">
-                                Site-Specific Flood Risk Reports
-                              </Heading>
-                              <Text color="gray.600">
-                                Evaluate flood exposure for commercial
-                                properties, industrial facilities, and future
-                                investment sites.
-                              </Text>
-                              <Heading size="md" color="#0F2922" mt={4}>
-                                Portfolio-Wide Risk Analysis
-                              </Heading>
-                              <Text color="gray.600">
-                                Analyse multiple assets across geographies to
-                                guide investment planning and climate-resilient
-                                infrastructure decisions.
-                              </Text>
-                              <Button
-                                colorScheme="blue"
-                                size="lg"
-                                mt={4}
-                                borderRadius="full"
-                              >
-                                Learn More
-                              </Button>
-                            </VStack>
-                          </Box>
-                        </Flex>
-                      </Box>
-                    </TabPanel>
-                  </TabPanels>
-                </Tabs>
-              </Box>
-            </VStack>
+                  {/* Protect */}
+                  <VStack spacing={4} align="center">
+                    <Image src="/protect-icon.png" alt="Protect" h="60px" />
+                    <Heading as="h3" size="lg" color="#0F2922">
+                      Protect
+                    </Heading>
+                    <Text color="#4A5568" textAlign="center">
+                      Prepare buildings and communities to reduce damage
+                    </Text>
+                  </VStack>
+                </SimpleGrid>
+              </VStack>
+            </Box>
           </Container>
+        </Box>
+      </Box>
+
+      {/* Rest of the content with white background */}
+      <Box bg="white" pt={{ base: "200px", md: "180px" }}>
+        {/* Carousel Section */}
+        <Box w="full" mt={{ base: 16, lg: 20 }}>
+          <Heading
+            as="h2"
+            fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+            color="#0F2922"
+            fontWeight="bold"
+            textAlign="center"
+            mb={{ base: 8, lg: 12 }}
+            letterSpacing="-0.02em"
+          >
+            Join us in Building Flood-Resilient Communities
+          </Heading>
+
+          <Tabs
+            index={tabIndex}
+            onChange={setTabIndex}
+            variant="unstyled"
+            align="center"
+            position="relative"
+          >
+            <TabList
+              mb={8}
+              border="none"
+              display="flex"
+              justifyContent="center"
+              gap={4}
+            >
+              <Tab
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
+                color={tabIndex === 0 ? "white" : "gray.600"}
+                bg={tabIndex === 0 ? "#0F2922" : "transparent"}
+                borderRadius="full"
+                px={6}
+                py={3}
+                _hover={{ bg: tabIndex === 0 ? "#0F2922" : "gray.100" }}
+                transition="all 0.3s"
+              >
+                Governments & Urban Planners
+              </Tab>
+              <Tab
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
+                color={tabIndex === 1 ? "white" : "gray.600"}
+                bg={tabIndex === 1 ? "#0F2922" : "transparent"}
+                borderRadius="full"
+                px={6}
+                py={3}
+                _hover={{ bg: tabIndex === 1 ? "#0F2922" : "gray.100" }}
+                transition="all 0.3s"
+              >
+                Communities & Individuals
+              </Tab>
+              <Tab
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
+                color={tabIndex === 2 ? "white" : "gray.600"}
+                bg={tabIndex === 2 ? "#0F2922" : "transparent"}
+                borderRadius="full"
+                px={6}
+                py={3}
+                _hover={{ bg: tabIndex === 2 ? "#0F2922" : "gray.100" }}
+                transition="all 0.3s"
+              >
+                Businesses
+              </Tab>
+              <Tab
+                fontSize={{ base: "sm", md: "md" }}
+                fontWeight="medium"
+                color={tabIndex === 3 ? "white" : "gray.600"}
+                bg={tabIndex === 3 ? "#0F2922" : "transparent"}
+                borderRadius="full"
+                px={6}
+                py={3}
+                _hover={{ bg: tabIndex === 3 ? "#0F2922" : "gray.100" }}
+                transition="all 0.3s"
+              >
+                Insurance & Financial Institutions
+              </Tab>
+            </TabList>
+
+            {/* Navigation Arrows */}
+            {!isMobile && (
+              <>
+                <IconButton
+                  aria-label="Previous"
+                  icon={<ChevronLeftIcon boxSize={8} />}
+                  position="absolute"
+                  left={0}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  onClick={handlePrevTab}
+                  variant="ghost"
+                  size="lg"
+                  zIndex={2}
+                />
+                <IconButton
+                  aria-label="Next"
+                  icon={<ChevronRightIcon boxSize={8} />}
+                  position="absolute"
+                  right={0}
+                  top="50%"
+                  transform="translateY(-50%)"
+                  onClick={handleNextTab}
+                  variant="ghost"
+                  size="lg"
+                  zIndex={2}
+                />
+              </>
+            )}
+
+            <TabPanels>
+              {/* Government & Urban Planners */}
+              <TabPanel>
+                <Box
+                  maxW="container.lg"
+                  mx="auto"
+                  p={8}
+                  bg="white"
+                  boxShadow="xl"
+                  borderRadius="2xl"
+                  transition="all 0.3s"
+                >
+                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                    <Box flex={1}>
+                      <VStack align="start" spacing={6}>
+                        <Heading size="lg" color="#0F2922">
+                          Governments & Urban Planners
+                        </Heading>
+                        <VStack align="start" spacing={4} pl={0}>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Build smarter, flood-resilient cities
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Get flood vulnerability maps and future risk
+                              insights to guide zoning, drainage, and
+                              infrastructure plans
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Use real-time dashboards to support emergency
+                              response and climate adaptation policies
+                            </Text>
+                          </Flex>
+                        </VStack>
+                        <Button
+                          as={RouterLink}
+                          to="/services/governments"
+                          variant="outline"
+                          size="lg"
+                          mt={4}
+                          borderRadius="full"
+                          borderColor="#0F2922"
+                          color="#0F2922"
+                          _hover={{ bg: "gray.50" }}
+                          onClick={scrollToTop}
+                        >
+                          Learn More
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <Box flex={1}>
+                      <Image
+                        src="/govtandurbanplanner.png"
+                        alt="Governments and Urban Planners"
+                        w="full"
+                        h="300px"
+                        objectFit="cover"
+                        borderRadius="xl"
+                      />
+                    </Box>
+                  </Flex>
+                </Box>
+              </TabPanel>
+
+              {/* Communities & Individuals */}
+              <TabPanel>
+                <Box
+                  maxW="container.lg"
+                  mx="auto"
+                  p={8}
+                  bg="white"
+                  boxShadow="xl"
+                  borderRadius="2xl"
+                  transition="all 0.3s"
+                >
+                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                    <Box flex={1}>
+                      <VStack align="start" spacing={6}>
+                        <Heading size="lg" color="#0F2922">
+                          Communities & Individuals
+                        </Heading>
+                        <VStack align="start" spacing={4} pl={0}>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600">
+                              Protect homes, lives, and livelihoods.
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Get flood risk scorecards for your property to
+                              make safe, informed decisions.
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Empower communities to prepare better with
+                              localized insights and action plans.
+                            </Text>
+                          </Flex>
+                        </VStack>
+                        <Button
+                          as={RouterLink}
+                          to="/services/communities"
+                          variant="outline"
+                          size="lg"
+                          mt={4}
+                          borderRadius="full"
+                          borderColor="#0F2922"
+                          color="#0F2922"
+                          _hover={{ bg: "gray.50" }}
+                          onClick={scrollToTop}
+                        >
+                          Learn More
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <Box flex={1}>
+                      <Image
+                        src="/commandpropowners.png"
+                        alt="Communities and Individuals"
+                        w="full"
+                        h="300px"
+                        objectFit="cover"
+                        borderRadius="xl"
+                      />
+                    </Box>
+                  </Flex>
+                </Box>
+              </TabPanel>
+
+              {/* Businesses */}
+              <TabPanel>
+                <Box
+                  maxW="container.lg"
+                  mx="auto"
+                  p={8}
+                  bg="white"
+                  boxShadow="xl"
+                  borderRadius="2xl"
+                  transition="all 0.3s"
+                >
+                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                    <Box flex={1}>
+                      <VStack align="start" spacing={6}>
+                        <Heading size="lg" color="#0F2922">
+                          Businesses
+                        </Heading>
+                        <VStack align="start" spacing={4} pl={0}>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              De-risk investments and plan for resilience
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Identify safe locations, assess flood risks, and
+                              align operations with ESG goals
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Plan for disruptions with simulations and
+                              infrastructure recommendations that protect assets
+                              and people
+                            </Text>
+                          </Flex>
+                        </VStack>
+                        <Button
+                          as={RouterLink}
+                          to="/services/businesses"
+                          variant="outline"
+                          size="lg"
+                          mt={4}
+                          borderRadius="full"
+                          borderColor="#0F2922"
+                          color="#0F2922"
+                          _hover={{ bg: "gray.50" }}
+                          onClick={scrollToTop}
+                        >
+                          Learn More
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <Box flex={1}>
+                      <Image
+                        src="/businessandinvestors.png"
+                        alt="Businesses"
+                        w="full"
+                        h="300px"
+                        objectFit="cover"
+                        borderRadius="xl"
+                      />
+                    </Box>
+                  </Flex>
+                </Box>
+              </TabPanel>
+
+              {/* Insurance & Financial Institutions */}
+              <TabPanel>
+                <Box
+                  maxW="container.lg"
+                  mx="auto"
+                  p={8}
+                  bg="white"
+                  boxShadow="xl"
+                  borderRadius="2xl"
+                  transition="all 0.3s"
+                >
+                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                    <Box flex={1}>
+                      <VStack align="start" spacing={6}>
+                        <Heading size="lg" color="#0F2922">
+                          Insurance & Financial Institutions
+                        </Heading>
+                        <VStack align="start" spacing={4} pl={0}>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Climate-proof your portfolios.
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Access flood risk projections and exposure maps to
+                              support smarter underwriting and lending.
+                            </Text>
+                          </Flex>
+                          <Flex gap={3}>
+                            <Box
+                              as="span"
+                              w={2}
+                              h={2}
+                              bg="gray.600"
+                              borderRadius="full"
+                              mt={2}
+                              flexShrink={0}
+                            />
+                            <Text color="gray.600" align={"left"}>
+                              Comply with IRDAI's climate guidelines through
+                              stress testing, disclosures, and sustainable
+                              finance planning.
+                            </Text>
+                          </Flex>
+                        </VStack>
+                        <Button
+                          as={RouterLink}
+                          to="/services/insurance"
+                          variant="outline"
+                          size="lg"
+                          mt={4}
+                          borderRadius="full"
+                          borderColor="#0F2922"
+                          color="#0F2922"
+                          _hover={{ bg: "gray.50" }}
+                          onClick={scrollToTop}
+                        >
+                          Learn More
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <Box flex={1}>
+                      <Image
+                        src="/insuranceandfinance.png"
+                        alt="Insurance and Financial Institutions"
+                        w="full"
+                        h="300px"
+                        objectFit="cover"
+                        borderRadius="xl"
+                      />
+                    </Box>
+                  </Flex>
+                </Box>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </Box>
 
         {/* Watch a Demo Section */}

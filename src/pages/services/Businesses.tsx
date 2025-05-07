@@ -116,11 +116,11 @@ const Businesses = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/risk-assessment-icon.png"
                 alt="Risk Assessment"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Site-Specific Flood Risk Assessment
               </Heading>
@@ -143,11 +143,11 @@ const Businesses = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/location-icon.png"
                 alt="Location Advisory"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Location Advisory Based on ESG
               </Heading>
@@ -170,11 +170,11 @@ const Businesses = () => {
               transition="all 0.3s"
               _hover={{ transform: "translateY(-4px)", boxShadow: "xl" }}
             >
-              <Image
+              {/* <Image
                 src="/continuity-icon.png"
                 alt="Business Continuity"
                 h="60px"
-              />
+              /> */}
               <Heading as="h3" fontSize="xl" color="#1B3C4B">
                 Business Continuity Planning
               </Heading>
