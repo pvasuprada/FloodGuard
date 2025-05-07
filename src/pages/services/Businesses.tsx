@@ -27,7 +27,7 @@ import {
 import { Link as RouterLink } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
 import { ChevronDownIcon } from "@chakra-ui/icons";
-
+import WatchADemo from "../../components/WatchADemo";
 const Businesses = () => {
   return (
     <Box>
@@ -78,7 +78,7 @@ const Businesses = () => {
             </Box>
             <Box>
               <Image
-                src="/business-illustration.png"
+                src="/businessandinvestors.png"
                 alt="Business Building Illustration"
                 w="full"
                 h="auto"
@@ -214,124 +214,7 @@ const Businesses = () => {
       </Box>
 
       {/* Watch a Demo Section */}
-      <Box bg="gray.50" py={20}>
-        <Container maxW="container.xl">
-          <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={12}>
-            {/* Left Column - Description */}
-            <Box>
-              <Heading
-                as="h2"
-                fontSize={{ base: "3xl", lg: "4xl" }}
-                color="#0F2922"
-                mb={6}
-              >
-                What to Expect in the Demo:
-              </Heading>
-              <Text fontSize="lg" color="gray.600" mb={8}>
-                See how FloodGuard can help your business predict, plan, and
-                protect — before the next flood hits.
-              </Text>
-              <Text fontSize="lg" color="gray.600" mb={8}>
-                Whether you're a business owner, facility manager, or risk
-                assessment officer, our flood risk assessment tools are built to
-                meet your specific needs. Book a free demo to explore how
-                FloodGuard works and how it can be tailored for your business
-                operations.
-              </Text>
-              <UnorderedList spacing={4} color="gray.600">
-                <ListItem>
-                  A walk-through of our flood risk assessment process
-                </ListItem>
-                <ListItem>
-                  Real examples of business risk reports and mitigation
-                  strategies
-                </ListItem>
-                <ListItem>
-                  Q&A session to discuss your specific requirements
-                </ListItem>
-                <ListItem>
-                  Customisation options for your business case
-                </ListItem>
-              </UnorderedList>
-            </Box>
-
-            {/* Right Column - Form */}
-            <Box>
-              <Box bg="white" p={8} borderRadius="xl" boxShadow="lg">
-                <VStack spacing={6} align="stretch">
-                  <Heading
-                    as="h2"
-                    fontSize={{ base: "2xl", lg: "3xl" }}
-                    color="#0F2922"
-                    textAlign="center"
-                  >
-                    Watch a Demo
-                  </Heading>
-                  <Text color="gray.600" textAlign="center">
-                    Provide your details below to receive the demo via email
-                  </Text>
-
-                  <FormControl isRequired>
-                    <FormLabel>Full Name</FormLabel>
-                    <Input
-                      placeholder="Enter full name"
-                      size="lg"
-                      borderRadius="md"
-                      borderColor="gray.300"
-                      _hover={{ borderColor: "gray.400" }}
-                    />
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
-                    <Input
-                      type="email"
-                      placeholder="Enter email"
-                      size="lg"
-                      borderRadius="md"
-                      borderColor="gray.300"
-                      _hover={{ borderColor: "gray.400" }}
-                    />
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Business Type</FormLabel>
-                    <Select
-                      placeholder="Select"
-                      size="lg"
-                      borderRadius="md"
-                      borderColor="gray.300"
-                      _hover={{ borderColor: "gray.400" }}
-                    >
-                      <option value="manufacturing">Manufacturing</option>
-                      <option value="retail">Retail</option>
-                      <option value="logistics">
-                        Logistics & Supply Chain
-                      </option>
-                      <option value="real-estate">
-                        Real Estate Development
-                      </option>
-                      <option value="other">Other</option>
-                    </Select>
-                  </FormControl>
-
-                  <Button
-                    bg="#0F2922"
-                    color="white"
-                    size="lg"
-                    width="100%"
-                    borderRadius="full"
-                    _hover={{ bg: "#1B4B40" }}
-                    mt={4}
-                  >
-                    Submit
-                  </Button>
-                </VStack>
-              </Box>
-            </Box>
-          </Grid>
-        </Container>
-      </Box>
+      <WatchADemo />
 
       {/* Footer */}
       <Box bg="white" py={16} borderTop="1px" borderColor="gray.100">
