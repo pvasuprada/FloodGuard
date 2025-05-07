@@ -150,8 +150,8 @@ const Home = () => {
 
               {/* Incubation Section */}
               <Box
-                //mt={{ base: 12, lg: 16 }}
-                mb={{ base: 10, md: 14 }}
+                mt={{ base: 8, lg: 12 }}
+                mb={{ base: 20, md: 24 }}
                 position="relative"
                 zIndex={2}
               >
@@ -182,7 +182,7 @@ const Home = () => {
         {/* Why Flood Guard Section - Overlapping Card */}
         <Box
           position="absolute"
-          bottom={{ base: "-180px", md: "-140px" }}
+          bottom={{ base: "-220px", md: "-140px" }}
           left={0}
           right={0}
           zIndex={2}
@@ -195,10 +195,10 @@ const Home = () => {
               p={{ base: 6, md: 10 }}
               mx={{ base: 4, md: 8 }}
             >
-              <VStack spacing={{ base: 8, lg: 12 }} align="center">
+              <VStack spacing={{ base: 6, lg: 8 }} align="center">
                 <Heading
                   as="h2"
-                  fontSize={{ base: "3xl", lg: "4xl" }}
+                  fontSize={{ base: "2xl", lg: "4xl" }}
                   color="#0F2922"
                   fontWeight="bold"
                   textAlign="center"
@@ -263,7 +263,7 @@ const Home = () => {
       </Box>
 
       {/* Rest of the content with white background */}
-      <Box bg="white" pt={{ base: "200px", md: "180px" }}>
+      <Box bg="white" pt={{ base: "240px", md: "180px" }}>
         {/* Carousel Section */}
         <Box w="full" mt={{ base: 16, lg: 20 }}>
           <Heading
@@ -284,93 +284,117 @@ const Home = () => {
             variant="unstyled"
             align="center"
             position="relative"
+            w="full"
           >
-            <TabList
-              mb={8}
-              border="none"
-              display="flex"
-              justifyContent="center"
-              gap={4}
+            <Box
+              position="relative"
+              w="full"
+              overflowX="auto"
+              pb={4}
+              sx={{
+                scrollbarWidth: "none",
+                "::-webkit-scrollbar": {
+                  display: "none",
+                },
+                "-webkit-overflow-scrolling": "touch",
+              }}
             >
-              <Tab
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="medium"
-                color={tabIndex === 0 ? "white" : "gray.600"}
-                bg={tabIndex === 0 ? "#0F2922" : "transparent"}
-                borderRadius="full"
-                px={6}
-                py={3}
-                _hover={{ bg: tabIndex === 0 ? "#0F2922" : "gray.100" }}
-                transition="all 0.3s"
+              <TabList
+                mb={4}
+                border="none"
+                display="inline-flex"
+                minW="max-content"
+                gap={3}
+                mx={{ base: 4, md: "auto" }}
               >
-                Governments & Urban Planners
-              </Tab>
-              <Tab
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="medium"
-                color={tabIndex === 1 ? "white" : "gray.600"}
-                bg={tabIndex === 1 ? "#0F2922" : "transparent"}
-                borderRadius="full"
-                px={6}
-                py={3}
-                _hover={{ bg: tabIndex === 1 ? "#0F2922" : "gray.100" }}
-                transition="all 0.3s"
-              >
-                Communities & Individuals
-              </Tab>
-              <Tab
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="medium"
-                color={tabIndex === 2 ? "white" : "gray.600"}
-                bg={tabIndex === 2 ? "#0F2922" : "transparent"}
-                borderRadius="full"
-                px={6}
-                py={3}
-                _hover={{ bg: tabIndex === 2 ? "#0F2922" : "gray.100" }}
-                transition="all 0.3s"
-              >
-                Businesses
-              </Tab>
-              <Tab
-                fontSize={{ base: "sm", md: "md" }}
-                fontWeight="medium"
-                color={tabIndex === 3 ? "white" : "gray.600"}
-                bg={tabIndex === 3 ? "#0F2922" : "transparent"}
-                borderRadius="full"
-                px={6}
-                py={3}
-                _hover={{ bg: tabIndex === 3 ? "#0F2922" : "gray.100" }}
-                transition="all 0.3s"
-              >
-                Insurance & Financial Institutions
-              </Tab>
-            </TabList>
+                <Tab
+                  fontSize={{ base: "xs", md: "sm" }}
+                  fontWeight="medium"
+                  color={tabIndex === 0 ? "white" : "gray.600"}
+                  bg={tabIndex === 0 ? "#0F2922" : "transparent"}
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  minW="max-content"
+                  _hover={{ bg: tabIndex === 0 ? "#0F2922" : "gray.100" }}
+                  transition="all 0.3s"
+                >
+                  Governments & Urban Planners
+                </Tab>
+                <Tab
+                  fontSize={{ base: "xs", md: "sm" }}
+                  fontWeight="medium"
+                  color={tabIndex === 1 ? "white" : "gray.600"}
+                  bg={tabIndex === 1 ? "#0F2922" : "transparent"}
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  minW="max-content"
+                  _hover={{ bg: tabIndex === 1 ? "#0F2922" : "gray.100" }}
+                  transition="all 0.3s"
+                >
+                  Communities & Individuals
+                </Tab>
+                <Tab
+                  fontSize={{ base: "xs", md: "sm" }}
+                  fontWeight="medium"
+                  color={tabIndex === 2 ? "white" : "gray.600"}
+                  bg={tabIndex === 2 ? "#0F2922" : "transparent"}
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  minW="max-content"
+                  _hover={{ bg: tabIndex === 2 ? "#0F2922" : "gray.100" }}
+                  transition="all 0.3s"
+                >
+                  Businesses
+                </Tab>
+                <Tab
+                  fontSize={{ base: "xs", md: "sm" }}
+                  fontWeight="medium"
+                  color={tabIndex === 3 ? "white" : "gray.600"}
+                  bg={tabIndex === 3 ? "#0F2922" : "transparent"}
+                  borderRadius="full"
+                  px={4}
+                  py={2}
+                  minW="max-content"
+                  _hover={{ bg: tabIndex === 3 ? "#0F2922" : "gray.100" }}
+                  transition="all 0.3s"
+                >
+                  Insurance & Financial Institutions
+                </Tab>
+              </TabList>
+            </Box>
 
             {/* Navigation Arrows */}
             {!isMobile && (
               <>
                 <IconButton
                   aria-label="Previous"
-                  icon={<ChevronLeftIcon boxSize={8} />}
+                  icon={<ChevronLeftIcon boxSize={6} />}
                   position="absolute"
-                  left={0}
+                  left={2}
                   top="50%"
                   transform="translateY(-50%)"
                   onClick={handlePrevTab}
                   variant="ghost"
-                  size="lg"
+                  size="sm"
+                  color="gray.600"
+                  _hover={{ bg: "gray.100" }}
                   zIndex={2}
                 />
                 <IconButton
                   aria-label="Next"
-                  icon={<ChevronRightIcon boxSize={8} />}
+                  icon={<ChevronRightIcon boxSize={6} />}
                   position="absolute"
-                  right={0}
+                  right={2}
                   top="50%"
                   transform="translateY(-50%)"
                   onClick={handleNextTab}
                   variant="ghost"
-                  size="lg"
+                  size="sm"
+                  color="gray.600"
+                  _hover={{ bg: "gray.100" }}
                   zIndex={2}
                 />
               </>
@@ -382,19 +406,29 @@ const Home = () => {
                 <Box
                   maxW="container.lg"
                   mx="auto"
-                  p={8}
+                  p={{ base: 4, md: 8 }}
                   bg="white"
                   boxShadow="xl"
                   borderRadius="2xl"
                   transition="all 0.3s"
                 >
-                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                  <Flex
+                    direction={{ base: "column", md: "row" }}
+                    gap={{ base: 6, md: 8 }}
+                  >
                     <Box flex={1}>
-                      <VStack align="start" spacing={6}>
-                        <Heading size="lg" color="#0F2922">
+                      <VStack align="start" spacing={{ base: 4, md: 6 }}>
+                        <Heading
+                          size={{ base: "md", md: "lg" }}
+                          color="#0F2922"
+                        >
                           Governments & Urban Planners
                         </Heading>
-                        <VStack align="start" spacing={4} pl={0}>
+                        <VStack
+                          align="start"
+                          spacing={{ base: 3, md: 4 }}
+                          pl={0}
+                        >
                           <Flex gap={3}>
                             <Box
                               as="span"
@@ -445,11 +479,12 @@ const Home = () => {
                           as={RouterLink}
                           to="/services/governments"
                           variant="outline"
-                          size="lg"
-                          mt={4}
+                          size={{ base: "md", md: "lg" }}
+                          mt={{ base: 2, md: 4 }}
                           borderRadius="full"
                           borderColor="#0F2922"
                           color="#0F2922"
+                          w={{ base: "100%", md: "auto" }}
                           _hover={{ bg: "gray.50" }}
                           onClick={scrollToTop}
                         >
@@ -457,12 +492,12 @@ const Home = () => {
                         </Button>
                       </VStack>
                     </Box>
-                    <Box flex={1}>
+                    <Box flex={1} h={{ base: "200px", md: "300px" }}>
                       <Image
                         src="/govtandurbanplanner.png"
                         alt="Governments and Urban Planners"
                         w="full"
-                        h="300px"
+                        h="full"
                         objectFit="cover"
                         borderRadius="xl"
                       />
@@ -476,19 +511,29 @@ const Home = () => {
                 <Box
                   maxW="container.lg"
                   mx="auto"
-                  p={8}
+                  p={{ base: 4, md: 8 }}
                   bg="white"
                   boxShadow="xl"
                   borderRadius="2xl"
                   transition="all 0.3s"
                 >
-                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                  <Flex
+                    direction={{ base: "column", md: "row" }}
+                    gap={{ base: 6, md: 8 }}
+                  >
                     <Box flex={1}>
-                      <VStack align="start" spacing={6}>
-                        <Heading size="lg" color="#0F2922">
+                      <VStack align="start" spacing={{ base: 4, md: 6 }}>
+                        <Heading
+                          size={{ base: "md", md: "lg" }}
+                          color="#0F2922"
+                        >
                           Communities & Individuals
                         </Heading>
-                        <VStack align="start" spacing={4} pl={0}>
+                        <VStack
+                          align="start"
+                          spacing={{ base: 3, md: 4 }}
+                          pl={0}
+                        >
                           <Flex gap={3}>
                             <Box
                               as="span"
@@ -538,11 +583,12 @@ const Home = () => {
                           as={RouterLink}
                           to="/services/communities"
                           variant="outline"
-                          size="lg"
-                          mt={4}
+                          size={{ base: "md", md: "lg" }}
+                          mt={{ base: 2, md: 4 }}
                           borderRadius="full"
                           borderColor="#0F2922"
                           color="#0F2922"
+                          w={{ base: "100%", md: "auto" }}
                           _hover={{ bg: "gray.50" }}
                           onClick={scrollToTop}
                         >
@@ -550,12 +596,12 @@ const Home = () => {
                         </Button>
                       </VStack>
                     </Box>
-                    <Box flex={1}>
+                    <Box flex={1} h={{ base: "200px", md: "300px" }}>
                       <Image
                         src="/commandpropowners.png"
                         alt="Communities and Individuals"
                         w="full"
-                        h="300px"
+                        h="full"
                         objectFit="cover"
                         borderRadius="xl"
                       />
@@ -569,19 +615,29 @@ const Home = () => {
                 <Box
                   maxW="container.lg"
                   mx="auto"
-                  p={8}
+                  p={{ base: 4, md: 8 }}
                   bg="white"
                   boxShadow="xl"
                   borderRadius="2xl"
                   transition="all 0.3s"
                 >
-                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                  <Flex
+                    direction={{ base: "column", md: "row" }}
+                    gap={{ base: 6, md: 8 }}
+                  >
                     <Box flex={1}>
-                      <VStack align="start" spacing={6}>
-                        <Heading size="lg" color="#0F2922">
+                      <VStack align="start" spacing={{ base: 4, md: 6 }}>
+                        <Heading
+                          size={{ base: "md", md: "lg" }}
+                          color="#0F2922"
+                        >
                           Businesses
                         </Heading>
-                        <VStack align="start" spacing={4} pl={0}>
+                        <VStack
+                          align="start"
+                          spacing={{ base: 3, md: 4 }}
+                          pl={0}
+                        >
                           <Flex gap={3}>
                             <Box
                               as="span"
@@ -632,11 +688,12 @@ const Home = () => {
                           as={RouterLink}
                           to="/services/businesses"
                           variant="outline"
-                          size="lg"
-                          mt={4}
+                          size={{ base: "md", md: "lg" }}
+                          mt={{ base: 2, md: 4 }}
                           borderRadius="full"
                           borderColor="#0F2922"
                           color="#0F2922"
+                          w={{ base: "100%", md: "auto" }}
                           _hover={{ bg: "gray.50" }}
                           onClick={scrollToTop}
                         >
@@ -644,12 +701,12 @@ const Home = () => {
                         </Button>
                       </VStack>
                     </Box>
-                    <Box flex={1}>
+                    <Box flex={1} h={{ base: "200px", md: "300px" }}>
                       <Image
                         src="/businessandinvestors.png"
                         alt="Businesses"
                         w="full"
-                        h="300px"
+                        h="full"
                         objectFit="cover"
                         borderRadius="xl"
                       />
@@ -663,19 +720,29 @@ const Home = () => {
                 <Box
                   maxW="container.lg"
                   mx="auto"
-                  p={8}
+                  p={{ base: 4, md: 8 }}
                   bg="white"
                   boxShadow="xl"
                   borderRadius="2xl"
                   transition="all 0.3s"
                 >
-                  <Flex direction={{ base: "column", md: "row" }} gap={8}>
+                  <Flex
+                    direction={{ base: "column", md: "row" }}
+                    gap={{ base: 6, md: 8 }}
+                  >
                     <Box flex={1}>
-                      <VStack align="start" spacing={6}>
-                        <Heading size="lg" color="#0F2922">
+                      <VStack align="start" spacing={{ base: 4, md: 6 }}>
+                        <Heading
+                          size={{ base: "md", md: "lg" }}
+                          color="#0F2922"
+                        >
                           Insurance & Financial Institutions
                         </Heading>
-                        <VStack align="start" spacing={4} pl={0}>
+                        <VStack
+                          align="start"
+                          spacing={{ base: 3, md: 4 }}
+                          pl={0}
+                        >
                           <Flex gap={3}>
                             <Box
                               as="span"
@@ -726,11 +793,12 @@ const Home = () => {
                           as={RouterLink}
                           to="/services/insurance"
                           variant="outline"
-                          size="lg"
-                          mt={4}
+                          size={{ base: "md", md: "lg" }}
+                          mt={{ base: 2, md: 4 }}
                           borderRadius="full"
                           borderColor="#0F2922"
                           color="#0F2922"
+                          w={{ base: "100%", md: "auto" }}
                           _hover={{ bg: "gray.50" }}
                           onClick={scrollToTop}
                         >
@@ -738,12 +806,12 @@ const Home = () => {
                         </Button>
                       </VStack>
                     </Box>
-                    <Box flex={1}>
+                    <Box flex={1} h={{ base: "200px", md: "300px" }}>
                       <Image
                         src="/insuranceandfinance.png"
                         alt="Insurance and Financial Institutions"
                         w="full"
-                        h="300px"
+                        h="full"
                         objectFit="cover"
                         borderRadius="xl"
                       />

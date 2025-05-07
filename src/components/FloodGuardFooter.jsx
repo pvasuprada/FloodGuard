@@ -91,14 +91,14 @@ const FloodGuardFooter = () => {
             >
               Home
             </Link>
-            <Link
+            {/* <Link
               as={RouterLink}
               to="/services"
               color="gray.700"
               _hover={{ color: "gray.900" }}
             >
               Services
-            </Link>
+            </Link> */}
             {/* <Link
               as={RouterLink}
               to="/resources"

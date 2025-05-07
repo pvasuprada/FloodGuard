@@ -167,7 +167,11 @@ const WatchADemo = () => {
                       </Select>
                     </FormControl>
 
-                    <Grid templateColumns="1fr 1fr" gap={4} w="100%">
+                    <Grid
+                      templateColumns={{ base: "1fr", sm: "1fr 1fr" }}
+                      gap={4}
+                      w="100%"
+                    >
                       <FormControl isRequired>
                         <FormLabel mb={1}>Preferred Date</FormLabel>
                         <Input
@@ -178,7 +182,8 @@ const WatchADemo = () => {
                           borderColor="gray.300"
                           _hover={{ borderColor: "gray.400" }}
                           min={new Date().toISOString().split("T")[0]}
-                          h="40px"
+                          h={{ base: "40px", md: "40px" }}
+                          w="100%"
                         />
                       </FormControl>
 
@@ -191,7 +196,8 @@ const WatchADemo = () => {
                           borderRadius="md"
                           borderColor="gray.300"
                           _hover={{ borderColor: "gray.400" }}
-                          h="40px"
+                          h={{ base: "40px", md: "40px" }}
+                          w="100%"
                         >
                           <option value="9:00-10:00">9:00 AM - 10:00 AM</option>
                           <option value="10:00-11:00">
