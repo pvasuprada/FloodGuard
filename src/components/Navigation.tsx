@@ -9,10 +9,24 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 
 const Navigation = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleDemoClick = () => {
+    // If already on home page, scroll to demo section
+    if (location.pathname === "/") {
+      const demoSection = document.getElementById("demo-section");
+      demoSection?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // If on another page, navigate to home and then scroll to demo
+      navigate("/", { state: { scrollToDemo: true } });
+    }
+  };
+
   return (
     <Box
       as="nav"
@@ -151,8 +165,9 @@ const Navigation = () => {
             px={6}
             _hover={{ bg: "darkgreen.700" }}
             borderRadius="full"
+            onClick={handleDemoClick}
           >
-            Book a Demo
+            Watch a Demo
           </Button>
         </Flex>
       </Flex>
