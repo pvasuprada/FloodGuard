@@ -131,7 +131,7 @@ const Home = () => {
                 assessments, preparedness, and resilience-building.
               </Text>
 
-              <Button
+              {/* <Button
                 bg="#0F2922"
                 color="white"
                 px={8}
@@ -146,7 +146,7 @@ const Home = () => {
                 onClick={scrollToDemo}
               >
                 Watch a Demo
-              </Button>
+              </Button> */}
 
               {/* Incubation Section */}
               <Box

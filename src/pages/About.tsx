@@ -6,59 +6,51 @@ import {
   SimpleGrid,
   VStack,
   Image,
-  Flex,
   Link,
   Icon,
-  HStack,
 } from "@chakra-ui/react";
-import { FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const About = () => {
   const teamMembers = [
     {
-      name: "Dr. Aditya Sharma",
-      role: "Founder & CEO",
-      image: "/team/aditya.jpg",
+      name: "Dhanya Bulla",
+      role: "Founder",
+      image: "dh.jpeg",
       description:
-        "PhD in Climate Science from IIT Delhi. 10+ years experience in flood risk assessment and climate modeling.",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+        "Leading FloodGuard's mission to revolutionize flood risk assessment and management in India.",
+      linkedin: "https://www.linkedin.com/in/dhanya-bulla/",
+    },
+    // {
+    //   name: "Pavan",
+    //   role: "Developer",
+    //   image: "/team/pavan.jpg",
+    //   description:
+    //     "Developer working on flood risk modeling and data visualization.",
+    //   linkedin: "https://linkedin.com",
+    // },
+    {
+      name: "Vasuprada",
+      role: "GIS Developer",
+      image: "/vp.jpeg",
+      description:
+        "Specializing in geospatial data analysis and Web GIS development for flood risk assessment.",
+      linkedin: "https://www.linkedin.com/in/vasuprada-pottumuttu/",
     },
     {
-      name: "Priya Patel",
-      role: "Chief Technology Officer",
-      image: "/team/priya.jpg",
+      name: "Sagar",
+      role: "Developer",
+      image: "/sd.jpeg",
       description:
-        "Former Tech Lead at Google. Expert in AI/ML and geospatial data analysis.",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+        "Full-stack developer focused on building robust flood prediction systems.",
+      linkedin: "https://www.linkedin.com/in/mahisagar07/",
     },
     {
-      name: "Dr. Rajesh Kumar",
-      role: "Head of Research",
-      image: "/team/rajesh.jpg",
-      description:
-        "15+ years in hydrological modeling. Previously with National Water Institute.",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    },
-    {
-      name: "Sarah Williams",
-      role: "Product Manager",
-      image: "/team/sarah.jpg",
-      description:
-        "Specialist in climate-tech products. Previously led projects at Climate Analytics Corp.",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    },
-    {
-      name: "Arjun Reddy",
-      role: "Head of Operations",
-      image: "/team/arjun.jpg",
-      description:
-        "10+ years experience in scaling climate-tech startups across South Asia.",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      name: "Srikanth",
+      role: "Developer",
+      image: "/sk.jpeg",
+      description: "UX/UI Designer",
+      linkedin: "https://www.linkedin.com/in/mahisagar07/",
     },
   ];
 
@@ -82,10 +74,10 @@ const About = () => {
             flooding.
           </Text>
           <Text fontSize="lg" color="gray.600" maxW="3xl" lineHeight="tall">
-            Founded in 2023, our team brings together experts in climate
-            science, artificial intelligence, and urban planning. We believe
-            that by making flood risk data more accessible and actionable, we
-            can help create a more resilient future for all.
+            Founded in 2025, our team brings together experts in geospatial
+            analysis, software development, and flood risk assessment. We
+            believe that by making flood risk data more accessible and
+            actionable, we can help create a more resilient future for all.
           </Text>
         </VStack>
 
@@ -96,7 +88,7 @@ const About = () => {
             fontSize={{ base: "2xl", md: "3xl" }}
             color="#0F2922"
           >
-            Meet Our Team
+            Our Team
           </Heading>
           <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={8} w="full">
             {teamMembers.map((member) => (
@@ -141,24 +133,14 @@ const About = () => {
                     >
                       {member.description}
                     </Text>
-                    <HStack spacing={4} pt={2}>
-                      <Link
-                        href={member.linkedin}
-                        isExternal
-                        color="gray.600"
-                        _hover={{ color: "gray.800" }}
-                      >
-                        <Icon as={FaLinkedin} boxSize={5} />
-                      </Link>
-                      <Link
-                        href={member.twitter}
-                        isExternal
-                        color="gray.600"
-                        _hover={{ color: "gray.800" }}
-                      >
-                        <Icon as={FaTwitter} boxSize={5} />
-                      </Link>
-                    </HStack>
+                    <Link
+                      href={member.linkedin}
+                      isExternal
+                      color="gray.600"
+                      _hover={{ color: "gray.800" }}
+                    >
+                      <Icon as={FaLinkedin} boxSize={5} />
+                    </Link>
                   </VStack>
                 </VStack>
               </Box>
