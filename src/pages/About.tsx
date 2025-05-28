@@ -47,10 +47,18 @@ const About = () => {
     },
     {
       name: "Srikanth",
-      role: "Developer",
+      role: "Designer",
       image: "/sk.jpeg",
       description: "UX/UI Designer",
-      linkedin: "https://www.linkedin.com/in/mahisagar07/",
+      linkedin: "https://www.linkedin.com/in/srikanthavasarala/",
+    },
+    {
+      name: "Pavan",
+      role: "Developer",
+      image: "/pk.jpeg",
+      description:
+        "Developer working on flood risk modeling and data visualization.",
+      linkedin: "https://www.linkedin.com/in/naga-pavan-sabbavarapu-3363812b5/",
     },
   ];
 

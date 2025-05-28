@@ -148,7 +148,7 @@ const FloodGuardFooter = () => {
           flexDir={{ base: "column", md: "row" }}
           gap={4}
         >
-          <Text color="gray.600">©2025 FloodGuard.in</Text>
+          <Text color="gray.600">© FloodGuard Solutions Pvt. Ltd. 2025</Text>
           <HStack spacing={6}>
             <Button
               variant="link"

@@ -158,11 +158,18 @@ const Home = () => {
                 <Text color="#0F2922" mb={4} fontSize="sm" fontWeight="medium">
                   Incubated in
                 </Text>
-                <Box display="flex" gap={4}>
+                <Box display="flex" alignItems="center" gap={4}>
+                  <Image
+                    src="/emblem0.png"
+                    alt="Incubation Emblems"
+                    height="50px"
+                    objectFit="contain"
+                    objectPosition="left"
+                  />
                   <Image
                     src="/emblem1.png"
                     alt="Incubation Emblems"
-                    height="50px"
+                    height="80px"
                     objectFit="contain"
                     objectPosition="left"
                   />
