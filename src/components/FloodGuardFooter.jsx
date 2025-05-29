@@ -28,7 +28,13 @@ import {
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { Link as RouterLink } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaYoutube,
+  FaGlobe,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
 
 const FloodGuardFooter = () => {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
@@ -60,6 +66,15 @@ const FloodGuardFooter = () => {
                 color="gray.500"
                 _hover={{ color: "gray.700" }}
               />
+              <IconButton
+                as="a"
+                aria-label="Location"
+                icon={<FaMapMarkerAlt />}
+                href="https://www.google.com/maps/place/COHORT+Coworking+@+Kondapur/@17.455842,78.3652737,17z/data=!3m1!4b1!4m6!3m5!1s0x3bcb9366a7909207:0xa5ef612527c881f8!8m2!3d17.455842!4d78.3652737!16s%2Fg%2F11fm47kv08?entry=ttu&g_ep=EgoyMDI1MDUyNi4wIKXMDSoASAFQAw%3D%3D"
+                variant="ghost"
+                color="gray.500"
+                _hover={{ color: "gray.700" }}
+              ></IconButton>
               <IconButton
                 as="a"
                 href="https://instagram.com"
@@ -148,7 +163,9 @@ const FloodGuardFooter = () => {
           flexDir={{ base: "column", md: "row" }}
           gap={4}
         >
-          <Text color="gray.600">© FloodGuard Solutions Pvt. Ltd. 2025</Text>
+          <Text color="gray.600">
+            © FloodGuard Solutions Pvt. Ltd. 2025, COHORT Coworking @ Kondapur
+          </Text>
           <HStack spacing={6}>
             <Button
               variant="link"
