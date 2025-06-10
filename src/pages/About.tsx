@@ -39,25 +39,25 @@ const About = () => {
     },
     {
       name: "Sagar",
-      role: "Developer",
+      role: "DevOps",
       image: "/sd.jpeg",
       description:
-        "Full-stack developer focused on building robust flood prediction systems.",
+        "DevOps developer focused on building robust flood prediction systems.",
       linkedin: "https://www.linkedin.com/in/mahisagar07/",
     },
     {
-      name: "Srikanth",
+      name: "Sony",
       role: "Designer",
-      image: "/sk.jpeg",
+      image: "/sr.jpeg",
       description: "UX/UI Designer",
-      linkedin: "https://www.linkedin.com/in/srikanthavasarala/",
+      linkedin: "https://www.linkedin.com/in/sonyramya/",
     },
     {
       name: "Pavan",
-      role: "Developer",
+      role: "Field Researcher",
       image: "/pk.jpeg",
       description:
-        "Developer working on flood risk modeling and data visualization.",
+        "Field Researcher working on flood risk modeling and data visualization.",
       linkedin: "https://www.linkedin.com/in/naga-pavan-sabbavarapu-3363812b5/",
     },
   ];
